@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<head>
+   
+    <title>E-Commerce Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    
+    <header>
+        <div class="logo">
+            <h1>ShopMate</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#" id="cart-link">Cart (0)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    
+    <main>
+        <section class="product-list">
+            <div class="product" data-id="1">
+                <img src="sri1.jpeg" alt="Product 1">
+                <h3>Product 1</h3>
+                <p>$50.00</p>
+                <button onclick="addToCart(1, 'Product 1', 50)">Add to Cart</button>
+            </div>
+            <div class="product" data-id="2">
+                <img src="sri2.jpeg" alt="Product 2">
+                <h3>Product 2</h3>
+                <p>$60.00</p>
+                <button onclick="addToCart(2, 'Product 2', 60)">Add to Cart</button>
+            </div>
+            <div class="product" data-id="3">
+                <img src="sri3.jpeg" alt="Product 3">
+                <h3>Product 3</h3>
+                <p>$30.00</p>
+                <button onclick="addToCart(3, 'Product 3', 30)">Add to Cart</button>
+            </div>
+        </section>
+    </main>
+
+   
+    <div id="cart-modal" class="cart-modal">
+        <div class="cart-content">
+            <h2>Your Shopping Cart</h2>
+            <div id="cart-items"></div>
+            <p id="cart-total">Total: $0</p>
+            <button id="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
+            <button onclick="closeCart()">Close</button>
+        </div>
+    </div>
+
+
+   
+ <main>
+       <h2>Checkout</h2>
+       <center><section class="payment-methods"><br>
+        <h3>Select Payment Method</h3>
+            <div class="payment-option" id="stripe-section">
+                <h4>Pay with online payment</h4>
+                <button id="stripe-checkout-button">Proceed with online</button>
+            </div>
+
+           
+            <div class="payment-option" id="paypal-section">
+                <h4>Pay with cash</h4>
+				<button id="stripe-checkout-button">Proceed with cash</button>
+                <div id="paypal-button-container"></div>
+            </div>
+        </section></center>
+    </main>
+   
+</body>
+</html>
